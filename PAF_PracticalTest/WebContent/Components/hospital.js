@@ -195,3 +195,9 @@ function validateHospitalForm()
 
     return true;
 }
+//Scroll Button
+$("#buttonscroll").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#divHospitalsGrid").offset().top
+    }, 1500);
+});

@@ -50,7 +50,7 @@ public class HospitalsAPI extends HttpServlet {
                 request.getParameter("ManagerName"),
                 request.getParameter("HospitalName"),
                 request.getParameter("Address"),
-                request.getParameter("TPnumber"),
+                request.getParameter("TPnumber").replace("0","0"),
                 request.getParameter("Location")
 
 				
@@ -72,9 +72,9 @@ public class HospitalsAPI extends HttpServlet {
                 paras.get("MOHcode").toString(),
                 paras.get("ManagerName").toString().replace('+', ' '),
                 paras.get("HospitalName").toString().replace('+', ' '),
-                paras.get("Address").toString().replace('+', ' ').replaceAll("%2F", "/"),
+                paras.get("Address").toString().replace('+', ' ').replaceAll("%2F", "/").replace("."," "),
                 paras.get("TPnumber").toString(),
-                paras.get("Location").toString().replace('+', ' ')
+                paras.get("Location").toString().replace('+', ' ').replaceAll("%2F", "/")
 
 
         );

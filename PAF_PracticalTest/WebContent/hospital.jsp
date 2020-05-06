@@ -45,7 +45,7 @@
 				
 								
 				TP Number:
-				<input id="TPnumber" name="TPnumber" type="text" placeholder="	Enter Telephone Number .... ( ex - (07)######## )" class="form-control form-control-sm">
+				<input id="TPnumber" name="TPnumber" type="text" placeholder="	Enter Telephone Number .... ( ex - (0#)######## )" class="form-control form-control-sm">
 				<br><br>
 				
 				Location:

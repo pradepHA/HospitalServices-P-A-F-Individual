@@ -82,7 +82,17 @@ public class HospitalsAPI extends HttpServlet {
         response.getWriter().write(output);
 }
 
-	
+	/**
+	 * @see HttpServlet#doDelete(HttpServletRequest, HttpServletResponse)
+	 */
+	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		Map paras = getParasMap(request);
+		
+		String output = hospitalObj.deleteHospital(paras.get("HospitalID").toString());
+		
+		response.getWriter().write(output);
+	}
 	
 	// Convert request parameters to a Map
 	private static Map getParasMap(HttpServletRequest request)

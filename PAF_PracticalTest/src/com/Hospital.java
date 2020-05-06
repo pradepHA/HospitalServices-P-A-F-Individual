@@ -183,5 +183,39 @@ public class Hospital {
 	
 	
 	
-	
+	public String deleteHospital(String HospitalID)
+	{
+		String output = "";
+		
+		try
+		{
+			Connection con = connect();
+			
+			if (con == null)
+			{
+				return "Error while connecting to the database for deleting.";
+			}
+			
+			// create a prepared statement
+			String query = "delete from hospital where HospitalID=?";
+			PreparedStatement preparedStmt = con.prepareStatement(query);
+			
+			// binding values
+			preparedStmt.setInt(1, Integer.parseInt(HospitalID));
+			
+			// execute the statement
+			preparedStmt.execute();
+			con.close();
+			
+			String newHospitals = readHospital();
+			output = "{\"status\":\"success\", \"data\": \"" + newHospitals + "\"}";
+		}
+		catch (Exception e)
+		{
+			output = "{\"status\":\"error\", \"data\": \"Error while deleting the Hospital.\"}";
+			System.err.println(e.getMessage());
+		}
+		
+		return output;
+	}
 }

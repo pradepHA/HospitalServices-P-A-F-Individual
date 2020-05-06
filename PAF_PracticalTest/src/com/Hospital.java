@@ -66,5 +66,75 @@ public class Hospital {
 	}
 	
 	
+	public String readHospital()
+	{
+		String output = "";
+		
+		try
+		{
+			Connection con = connect();
+			
+			if (con == null)
+			{
+				return "Error while connecting to the database for reading.";
+			}
+			
+			// Prepare the html table to be displayed
+			output = "<table border=1 >"
+					+ "<tr><th>MOH Registration Code</th>"
+					+ "<th>Manager Name</th>"
+					+ "<th>Hospital Name</th>"
+					+ "<th>Address</th>"
+					+ "<th>Telephone Number</th>"
+					+ "<th>Location</th>"
+					+ "<th>Update</th>"
+					+ "<th>Remove</th></tr>";
+	
+			String query = "select * from hospital";
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(query);
+			
+			// iterate through the rows in the result set
+			while (rs.next())
+			{
+				String HospitalID = Integer.toString(rs.getInt("HospitalID"));
+				String MOHcode = rs.getString("MOHcode");
+				String ManagerName = rs.getString("ManagerName");
+				String HospitalName = rs.getString("HospitalName");
+				String Address = rs.getString("Address");
+				String TPnumber = rs.getString("TPnumber");
+				String Location = rs.getString("Location");
+				
+				// Add into the html table
+				output += "<tr><td><input id='hidHospitalIDUpdate'name='hidHospitalIDUpdate' type='hidden' value='" + HospitalID+ "'>" + MOHcode + "</td>";
+				output += "<td>" + ManagerName + "</td>";
+				output += "<td>" + HospitalName + "</td>";
+				output += "<td>" + Address + "</td>";
+				output += "<td>" + TPnumber + "</td>";
+				output += "<td>" + Location + "</td>";
+			
+				// buttons
+				output += "<td><input name='btnUpdate'type='button' "
+						+ "value='Update'class='btnUpdate btn btn-secondary'></td>"
+						+ "<td><input name='btnRemove'type='button' "
+						+ "value='Remove'class='btnRemove btn btn-danger'data-hospitalid='"+ HospitalID + "'>" + "</td></tr>";
+			}
+			
+			con.close();
+			
+			// Complete the html table
+			output += "</table>";
+			
+		}
+		catch (Exception e)
+		{
+			output = "Error while reading the hospital.";
+			System.err.println(e.getMessage());
+		}
+		
+		return output;
+	}
+	
+	
 	
 }

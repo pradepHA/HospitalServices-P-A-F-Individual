@@ -59,5 +59,27 @@ public class HospitalsAPI extends HttpServlet {
 		response.getWriter().write(output);
 	}
 
-	
+	/**
+	 * @see HttpServlet#doPut(HttpServletRequest, HttpServletResponse)
+	 */
+	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		Map paras = getParasMap(request);
+		
+		String output = hospitalObj.updateHospital(
+
+                paras.get("hidHospitalIDSave").toString(),
+                paras.get("MOHcode").toString(),
+                paras.get("ManagerName").toString().replace('+', ' '),
+                paras.get("HospitalName").toString().replace('+', ' '),
+                paras.get("Address").toString().replace('+', ' ').replaceAll("%2F", "/"),
+                paras.get("TPnumber").toString(),
+                paras.get("Location").toString().replace('+', ' ')
+
+
+        );
+
+        response.getWriter().write(output);
+}
+
 }

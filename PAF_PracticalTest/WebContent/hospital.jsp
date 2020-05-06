@@ -23,27 +23,27 @@
 			<form id="formHospital" name="formHospital" method="post" action="hospital.jsp">
 					 
 				MOH Code:
-				<input id="MOHcode" name="MOHcode" type="text" placeholder="		Enter MOH Code....(ex-GOV####)" class="form-control form-control-sm">
+				<input id="MOHcode" name="MOHcode" type="text" placeholder="	Enter MOH Code....(ex-GOV####)" class="form-control form-control-sm">
 				<br><br>
 				 
 				Manager Name:
-				<input id="ManagerName" name="ManagerName" type="text" placeholder="		Enter Manager Name .... " class="form-control form-control-sm">
+				<input id="ManagerName" name="ManagerName" type="text" placeholder="	Enter Manager Name .... " class="form-control form-control-sm">
 				<br><br>
 				
 				Hospital Name:
-				<input id="HospitalName" name="HospitalName" type="text" placeholder="		Enter Hospital Name .... " class="form-control form-control-sm">
+				<input id="HospitalName" name="HospitalName" type="text" placeholder="	Enter Hospital Name .... " class="form-control form-control-sm">
 				<br><br>
 				 
 				Address:
-				<input id="Address" name="Address" type="text" placeholder="		Enter Hospital Address .... " class="form-control form-control-sm">
+				<input id="Address" name="Address" type="text" placeholder="	Enter Hospital Address .... " class="form-control form-control-sm">
 				<br><br>
 								
 				TP Number:
-				<input id="TPnumber" name="TPnumber" type="text" placeholder="		Enter Telephone Number .... " class="form-control form-control-sm">
+				<input id="TPnumber" name="TPnumber" type="text" placeholder="	Enter Telephone Number .... " class="form-control form-control-sm">
 				<br><br>
 				
 				Location:
-				<input id="Location" name="Location" type="text" placeholder="		Enter Hospital Location .... " class="form-control form-control-sm">
+				<input id="Location" name="Location" type="text" placeholder="	Enter Hospital Location .... " class="form-control form-control-sm">
 				<br><br>
 				
 				<div id="alertSuccess" class="alert alert-success"></div>

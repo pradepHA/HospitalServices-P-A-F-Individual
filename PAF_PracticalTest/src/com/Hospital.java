@@ -1,31 +1,17 @@
 package com;
 
 import java.sql.*;
+import DbConnect.DbConnect;
 
 public class Hospital {
-	private Connection connect()
-	{
-		Connection con = null;
-		
-		try
-		{
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/healthcaredb?serverTimezone=UTC", "root", "");
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-		
-		return con;
-	}
+	
 	
 	public String insertHospital(String MOHcode,String ManagerName,String HospitalName,String Address,String TPnumber,String Location)
 	{
 		String output = "";
 		try
 		{
-			Connection con = connect();
+			Connection con = DbConnect.connect();
 			
 			if (con == null)
 			{
@@ -72,7 +58,7 @@ public class Hospital {
 		
 		try
 		{
-			Connection con = connect();
+			Connection con = DbConnect.connect();
 			
 			if (con == null)
 			{
@@ -142,7 +128,7 @@ public class Hospital {
 		
 		try
 		{
-			Connection con = connect();
+			Connection con = DbConnect.connect();
 			
 			if (con == null)
 			{
@@ -189,7 +175,7 @@ public class Hospital {
 		
 		try
 		{
-			Connection con = connect();
+			Connection con = DbConnect.connect();
 			
 			if (con == null)
 			{

@@ -40,9 +40,9 @@
 				<br><br>
 				 
 				Address:
-				<textarea id="Address" name="Address" type="text" placeholder="	Enter Hospital Address .... " class="form-control1 form-control-sm"></textarea>
+				<textarea id="Address" name="Address" type="text" placeholder="	Enter Hospital Address .... " class="form-control form-control-sm"></textarea>
 				<br><br>
-				<br><br>
+				
 								
 				TP Number:
 				<input id="TPnumber" name="TPnumber" type="text" placeholder="	Enter Telephone Number .... ( ex - (07)######## )" class="form-control form-control-sm">

@@ -136,5 +136,52 @@ public class Hospital {
 	}
 	
 	
+	public String updateHospital(String HospitalID, String MOHcode,String ManagerName,String HospitalName,String Address,String TPnumber,String Location)
+	{
+		String output = "";
+		
+		try
+		{
+			Connection con = connect();
+			
+			if (con == null)
+			{
+				return "Error while connecting to the database for updating.";
+			}
+			
+			// create a prepared statement
+			String query = "UPDATE hospital SET MOHcode = ?,ManagerName = ?,HospitalName = ?,Address = ?,TPnumber = ?,Location = ? WHERE HospitalID=?";
+			PreparedStatement preparedStmt = con.prepareStatement(query);
+			
+			// binding values
+		
+			preparedStmt.setString(1, MOHcode);
+			preparedStmt.setString(2, ManagerName);
+			preparedStmt.setString(3, HospitalName);
+			preparedStmt.setString(4, Address);
+			preparedStmt.setString(5, TPnumber);
+			preparedStmt.setString(6, Location);
+			preparedStmt.setInt(7, Integer.parseInt(HospitalID));;
+			
+			
+			// execute the statement
+			preparedStmt.execute();
+			con.close();
+			
+			String newHospitals = readHospital();
+			
+			output = "{\"status\":\"success\", \"data\": \"" + newHospitals	 + "\"}";
+		}
+		catch (Exception e)
+		{
+			output = "{\"status\":\"error\", \"data\": \"Error while updating the hospital.\"}";
+			System.err.println(e.getMessage());
+		}
+		
+		return output;
+	}
+	
+	
+	
 	
 }

@@ -19,8 +19,7 @@
 			<h1>Hospital Management</h1>
 			<!-- <div class="pull-right">
 			<div class="col-xs-12">
-            <a id="buttonscroll" style="color: #FAFAFA" class="btn btn-success"
-           	type="button">View Registered Hospitals</a>
+            <a id="buttonscroll" style="color: #FAFAFA" class="btn btn-success" type="button">View Registered Hospitals</a>
             </div>
             </div> -->
 			
@@ -48,7 +47,7 @@
 				
 				Location:
 				<input id="Location" name="Location" type="text" class="form-control form-control-sm">
-				<br>
+				<br><br><br>
 				
 				<input id="btnSave" name="btnSave" type="button" value="Save" class="btn btn-primary">
 				<a href="hospital.jsp" class="btn btn-danger" onclick="" type="button">Cancel</a>

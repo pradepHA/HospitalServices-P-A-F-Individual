@@ -40,7 +40,8 @@
 				<br><br>
 				 
 				Address:
-				<input id="Address" name="Address" type="text" placeholder="	Enter Hospital Address .... " class="form-control1 form-control-sm">
+				<textarea id="Address" name="Address" type="text" placeholder="	Enter Hospital Address .... " class="form-control1 form-control-sm"></textarea>
+				<br><br>
 				<br><br>
 								
 				TP Number:

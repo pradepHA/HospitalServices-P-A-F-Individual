@@ -159,7 +159,7 @@ public class Hospital {
 			preparedStmt.setString(2, ManagerName);
 			preparedStmt.setString(3, HospitalName);
 			preparedStmt.setString(4, Address);
-			preparedStmt.setString(5, TPnumber);
+			preparedStmt.setInt(5, Integer.parseInt(TPnumber));
 			preparedStmt.setString(6, Location);
 			preparedStmt.setInt(7, Integer.parseInt(HospitalID));;
 			

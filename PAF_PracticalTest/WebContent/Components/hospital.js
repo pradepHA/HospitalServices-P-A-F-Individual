@@ -163,21 +163,29 @@ function validateHospitalForm()
         return "Insert the Hospital Address.";
 
     }
- // TPnumber
+    // TPnumber
     if ($("#TPnumber").val().trim() == "") {
 
         return "Insert the Hospital TP number.";
 
     }
-   /* 
-    var phone = $("TPnumber").val().trim();
+    var TPnumber = $("#TPnumber").val().trim();
     
-    if(phone.length() <= 9 && phone.length() >= 11)
-    {
-    	return "Invalid phone number";
-    }*/
-    
- // Location
+    // is numerical value
+	if (!$.isNumeric(TPnumber))
+	{
+		return "Insert a numerical value for Telephonr Number.";
+	}
+  
+	//length validate
+	if ($("#TPnumber").val().length > 10){
+		return "More than 10 digits are included! in Mobile No"
+	}
+	if ($("#TPnumber").val().length < 10){
+		return "Please enter 10 digits for Mobile No"
+		
+	}
+	// Location
     if ($("#Location").val().trim() == "") {
 
         return "Insert the Hospital Location.";

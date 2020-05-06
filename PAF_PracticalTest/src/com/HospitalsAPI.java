@@ -13,34 +13,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-/**
- * Servlet implementation class HospitalsAPI
- */
+//(Pradeep H.A.T)
 @WebServlet("/HospitalsAPI")
 public class HospitalsAPI extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	Hospital hospitalObj = new Hospital();
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+  
     public HospitalsAPI() {
         super();
-        // TODO Auto-generated constructor stub
+        
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 			
@@ -50,7 +42,7 @@ public class HospitalsAPI extends HttpServlet {
                 request.getParameter("ManagerName"),
                 request.getParameter("HospitalName"),
                 request.getParameter("Address"),
-                request.getParameter("TPnumber"),
+                request.getParameter("TPnumber").replace("0","0"),
                 request.getParameter("Location")
 
 				
@@ -59,9 +51,7 @@ public class HospitalsAPI extends HttpServlet {
 		response.getWriter().write(output);
 	}
 
-	/**
-	 * @see HttpServlet#doPut(HttpServletRequest, HttpServletResponse)
-	 */
+	
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		Map paras = getParasMap(request);
@@ -72,9 +62,9 @@ public class HospitalsAPI extends HttpServlet {
                 paras.get("MOHcode").toString(),
                 paras.get("ManagerName").toString().replace('+', ' '),
                 paras.get("HospitalName").toString().replace('+', ' '),
-                paras.get("Address").toString().replace('+', ' ').replaceAll("%2F", "/"),
+                paras.get("Address").toString().replace('+', ' ').replaceAll("%2F", "/").replace("."," ").replaceAll("%2C", ","),
                 paras.get("TPnumber").toString(),
-                paras.get("Location").toString().replace('+', ' ')
+                paras.get("Location").toString().replace('+', ' ').replaceAll("%2F", "/")
 
 
         );
@@ -82,9 +72,7 @@ public class HospitalsAPI extends HttpServlet {
         response.getWriter().write(output);
 }
 
-	/**
-	 * @see HttpServlet#doDelete(HttpServletRequest, HttpServletResponse)
-	 */
+	
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		Map paras = getParasMap(request);
@@ -94,7 +82,7 @@ public class HospitalsAPI extends HttpServlet {
 		response.getWriter().write(output);
 	}
 	
-	// Convert request parameters to a Map
+	// Convert request parameters to a Map(Pradeep H.A.T)
 	private static Map getParasMap(HttpServletRequest request)
 	{
 		Map<String, String> map = new HashMap<String, String>();

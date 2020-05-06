@@ -33,13 +33,21 @@ div {
 h1 {
   text-align: center;
   text-transform: uppercase;
-  color: #4CAF50;
+  color: blue;
+  font-size: 50px;
+  font-family: "Lucida Console", Courier, monospace;
+}
+footer2 {
+	text-align: center;
+	float: left;
+	margin-left: 400px;
+	font-size: 10px;
 }
 h2 {
   text-align: center;
   text-transform: uppercase;
   color: black;
-  font-size: 20px;
+  font-size: 25px;
   
 }
 card-title{

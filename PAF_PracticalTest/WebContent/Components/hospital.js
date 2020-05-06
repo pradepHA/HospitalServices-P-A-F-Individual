@@ -88,6 +88,7 @@ function onHospitalSaveComplete(response, status)
 	$("#formHospital")[0].reset();
 }
 
+//DELETE==========================================
 $(document).on("click", ".btnRemove", function(event)
 {
 	$.ajax(
@@ -133,7 +134,7 @@ function onHospitalDeleteComplete(response, status)
 	}
 }
 
-
+//VALIDATION====================================
 function validateHospitalForm()
 {
 	// MOHcode
@@ -149,6 +150,14 @@ function validateHospitalForm()
         return "Insert the Manager Name ";
 
     }
+    
+//  //cannot be consist of numbers
+//    var regexp = /[^a-zA-Z]/g;
+//	
+//	if ($("#ManagerName").val().trim().match(regexp))
+//	{
+//		return "Hospital Name cannot be consist of numbers";
+//	}
 
     // HospitalName
     if ($("#HospitalName").val().trim() == "") {
@@ -156,6 +165,14 @@ function validateHospitalForm()
         return "Insert the Hospital Name ";
 
     }
+    
+//    //cannot be consist of numbers
+//    var regexp = /[^a-zA-Z]/g;
+//	
+//	if ($("#HospitalName").val().trim().match(regexp))
+//	{
+//		return "Hospital Name cannot be consist of numbers";
+//	}
 
     // Address
     if ($("#Address").val().trim() == "") {
@@ -163,21 +180,29 @@ function validateHospitalForm()
         return "Insert the Hospital Address.";
 
     }
- // TPnumber
+    // TPnumber
     if ($("#TPnumber").val().trim() == "") {
 
         return "Insert the Hospital TP number.";
 
     }
-   /* 
-    var phone = $("TPnumber").val().trim();
+    var TPnumber = $("#TPnumber").val().trim();
     
-    if(phone.length() <= 9 && phone.length() >= 11)
-    {
-    	return "Invalid phone number";
-    }*/
-    
- // Location
+    // is numerical value
+	if (!$.isNumeric(TPnumber))
+	{
+		return "Insert a numerical value for Telephonr Number.";
+	}
+  
+	//length validate
+	if ($("#TPnumber").val().length > 10){
+		return "More than 10 digits are included! in Mobile No"
+	}
+	if ($("#TPnumber").val().length < 10){
+		return "Please enter 10 digits for Mobile No"
+		
+	}
+	// Location
     if ($("#Location").val().trim() == "") {
 
         return "Insert the Hospital Location.";
@@ -187,3 +212,10 @@ function validateHospitalForm()
 
     return true;
 }
+
+//Scroll Button
+$("#buttonscroll").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#divHospitalsGrid").offset().top
+    }, 1500);
+});

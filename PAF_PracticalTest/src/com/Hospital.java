@@ -1,31 +1,17 @@
 package com;
 
 import java.sql.*;
+import DbConnect.DbConnect;
 
 public class Hospital {
-	private Connection connect()
-	{
-		Connection con = null;
-		
-		try
-		{
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/healthcaredb?serverTimezone=UTC", "root", "");
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-		
-		return con;
-	}
 	
+	// Insert Hospital -------------------------------------------------------------------------------------------------------------------(Pradeep H.A.T)
 	public String insertHospital(String MOHcode,String ManagerName,String HospitalName,String Address,String TPnumber,String Location)
 	{
 		String output = "";
 		try
 		{
-			Connection con = connect();
+			Connection con = DbConnect.connect();
 			
 			if (con == null)
 			{
@@ -65,14 +51,14 @@ public class Hospital {
 		return output;
 	}
 	
-	
+	// Read Hospital -------------------------------------------------------------------------------------------------------------------(Pradeep H.A.T) 
 	public String readHospital()
 	{
 		String output = "";
 		
 		try
 		{
-			Connection con = connect();
+			Connection con = DbConnect.connect();
 			
 			if (con == null)
 			{
@@ -135,14 +121,14 @@ public class Hospital {
 		return output;
 	}
 	
-	
+	// Update Hospital -------------------------------------------------------------------------------------------------------------------(Pradeep H.A.T)
 	public String updateHospital(String HospitalID, String MOHcode,String ManagerName,String HospitalName,String Address,String TPnumber,String Location)
 	{
 		String output = "";
 		
 		try
 		{
-			Connection con = connect();
+			Connection con = DbConnect.connect();
 			
 			if (con == null)
 			{
@@ -182,14 +168,14 @@ public class Hospital {
 	}
 	
 	
-	
+	// Remove Hospital -------------------------------------------------------------------------------------------------------------------(Pradeep H.A.T)
 	public String deleteHospital(String HospitalID)
 	{
 		String output = "";
 		
 		try
 		{
-			Connection con = connect();
+			Connection con = DbConnect.connect();
 			
 			if (con == null)
 			{

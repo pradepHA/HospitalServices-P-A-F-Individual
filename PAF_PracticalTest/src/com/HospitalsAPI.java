@@ -62,7 +62,7 @@ public class HospitalsAPI extends HttpServlet {
                 paras.get("MOHcode").toString(),
                 paras.get("ManagerName").toString().replace('+', ' '),
                 paras.get("HospitalName").toString().replace('+', ' '),
-                paras.get("Address").toString().replace('+', ' ').replaceAll("%2F", "/").replace("."," ").replaceAll("%2C", ","),
+                paras.get("Address").toString().replace('+', ' ').replaceAll("%2F", "/").replace("."," ").replaceAll("%2C", ",").replaceAll("%0D%0A", " "),
                 paras.get("TPnumber").toString(),
                 paras.get("Location").toString().replace('+', ' ').replaceAll("%2F", "/")
 

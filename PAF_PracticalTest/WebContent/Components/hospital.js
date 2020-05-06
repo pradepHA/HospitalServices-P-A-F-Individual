@@ -149,6 +149,14 @@ function validateHospitalForm()
         return "Insert the Manager Name ";
 
     }
+    
+  //cannot be consist of numbers
+    var regexp = /[^a-zA-Z]/g;
+	
+	if ($("#ManagerName").val().trim().match(regexp))
+	{
+		return "Hospital Name cannot be consist of numbers";
+	}
 
     // HospitalName
     if ($("#HospitalName").val().trim() == "") {
@@ -156,6 +164,14 @@ function validateHospitalForm()
         return "Insert the Hospital Name ";
 
     }
+    
+    //cannot be consist of numbers
+    var regexp = /[^a-zA-Z]/g;
+	
+	if ($("#HospitalName").val().trim().match(regexp))
+	{
+		return "Hospital Name cannot be consist of numbers";
+	}
 
     // Address
     if ($("#Address").val().trim() == "") {

@@ -15,13 +15,13 @@
 </head>
 <body>
 <div class="container">
-<h1>Hospital Management</h1><br><br>
+<h1>Hospital Management</h1><br>
 	<div class="row">
 		<div class="col-6">
 		
-                   <a id="buttonscroll" style="color: white" class="btn btn-success" type="button">View Hospital List</a>
+                   <a id="buttonscroll" style="color: white" class="btn2 btn-success" type="button">View Hospital List</a>
                 
-			<h2>Adding or Updating a Hospital </h2><br>
+			<h2>Adding or Updating a Hospital </h2><br><br>
 				
 						
 			<form id="formHospital" name="formHospital" method="post" action="hospital.jsp">
@@ -39,7 +39,7 @@
 				<br><br>
 				 
 				Address:
-				<input id="Address" name="Address" type="text" placeholder="	Enter Hospital Address .... " class="form-control form-control-sm">
+				<input id="Address" name="Address" type="text" placeholder="	Enter Hospital Address .... " class="form-control1 form-control-sm">
 				<br><br>
 								
 				TP Number:
@@ -85,26 +85,7 @@ $("#buttonscroll").click(function() {
     }, 1500);
 });
 
-alphabetical Only validation
-$( document ).ready(function() {
-    $( "#ManagerName" ).keypress(function(e) {
-        var key = e.keyCode;
-        if (key >= 48 && key <= 57) {
-            e.preventDefault();
-        }
-    });
-})
-
-//alphabetical Only validation
-$( document ).ready(function() {
-    $( "#HospitalName" ).keypress(function(e) {
-        var key = e.keyCode;
-        if (key >= 48 && key <= 57) {
-            e.preventDefault();
-        }
-    });
-})
-
 </script>
+
 </body>
 </html>

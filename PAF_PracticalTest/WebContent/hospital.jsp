@@ -23,7 +23,8 @@
                 
 			<h2>Adding or Updating a Hospital </h2><br><br>
 				
-						
+			<h3 style="font-size: 20px; color: red;">Please fill the hospital details.......</h3>
+			
 			<form id="formHospital" name="formHospital" method="post" action="hospital.jsp">
 					 
 				MOH Code:
@@ -58,8 +59,9 @@
 				<input type="hidden" id="hidHospitalIDSave" name="hidHospitalIDSave" value="">
 			</form><br><br><br>
 			
+			
 		        	       	
-			 <h3>List of Hospitals that Registered</h3>
+			 <h3 style="text-align: center;">List of Hospitals that Registered</h3>
 			 
             <div id="divHospitalsGrid">
 				<%
@@ -86,6 +88,15 @@ $("#buttonscroll").click(function() {
 });
 
 </script>
+			
+				<p class="footer2" style="font-size: 15px; text-align: center;">
+                    <span class="hint-text">Copyright &copy; 2020 </span>
+                    <span class="font-montserrat"><a target="_blank" href="https://github.com/pradepHA/HospitalServices-P-A-F-Individual/graphs/contributors">Healthcare</a></span>.
+                    <span class="hint-text">All rights reserved. </span>
 
+                </p>
+		
+				
 </body>
+
 </html>

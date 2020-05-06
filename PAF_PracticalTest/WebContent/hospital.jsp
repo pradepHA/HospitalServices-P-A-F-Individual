@@ -28,7 +28,7 @@
 			<form id="formHospital" name="formHospital" method="post" action="hospital.jsp">
 					 
 				MOH Code:
-				<input id="MOHcode" name="MOHcode" type="text" placeholder="	Enter MOH Code....(ex-GOV####)" class="form-control float-right form-control-sm">
+				<input id="MOHcode" name="MOHcode" type="text" placeholder="	Enter MOH Code.... ( ex - GOV#### )" class="form-control float-right form-control-sm">
 				<br><br>
 				 
 				Manager Name:
@@ -44,7 +44,7 @@
 				<br><br>
 								
 				TP Number:
-				<input id="TPnumber" name="TPnumber" type="text" placeholder="	Enter Telephone Number .... " class="form-control form-control-sm">
+				<input id="TPnumber" name="TPnumber" type="text" placeholder="	Enter Telephone Number .... ( ex - (07)######## )" class="form-control form-control-sm">
 				<br><br>
 				
 				Location:
@@ -87,6 +87,26 @@ $("#buttonscroll").click(function() {
     }, 1500);
 });
 
+</script>
+<script>
+
+$( document ).ready(function() {
+    $( "#ManagerName" ).keypress(function(e) {
+        var key = e.keyCode;
+        if (key >= 48 && key <= 57) {
+            e.preventDefault();
+        }
+    });
+});
+
+$( document ).ready(function() {
+    $( "#HospitalName" ).keypress(function(e) {
+        var key = e.keyCode;
+        if (key >= 48 && key <= 57) {
+            e.preventDefault();
+        }
+    });
+});
 </script>
 			
 				<p class="footer2" style="font-size: 15px; text-align: center;">

@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-//import java.sql.*;
 
 public class DbConnect {
 	
@@ -13,7 +12,7 @@ public class DbConnect {
 	private DbConnect() {
 	}
 	
-	//A common method to connect to the DB
+	//A common method to connect to the DB---------------------------------------------------------------------------------------(Pradeep H.A.T)
 	public static Connection connect() throws SQLException, ClassNotFoundException {
 		
 		if (connection == null || connection.isClosed()) {

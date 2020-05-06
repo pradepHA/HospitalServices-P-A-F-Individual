@@ -88,6 +88,7 @@ function onHospitalSaveComplete(response, status)
 	$("#formHospital")[0].reset();
 }
 
+//DELETE==========================================
 $(document).on("click", ".btnRemove", function(event)
 {
 	$.ajax(
@@ -133,7 +134,7 @@ function onHospitalDeleteComplete(response, status)
 	}
 }
 
-
+//VALIDATION====================================
 function validateHospitalForm()
 {
 	// MOHcode
@@ -150,13 +151,13 @@ function validateHospitalForm()
 
     }
     
-  //cannot be consist of numbers
-    var regexp = /[^a-zA-Z]/g;
-	
-	if ($("#ManagerName").val().trim().match(regexp))
-	{
-		return "Hospital Name cannot be consist of numbers";
-	}
+//  //cannot be consist of numbers
+//    var regexp = /[^a-zA-Z]/g;
+//	
+//	if ($("#ManagerName").val().trim().match(regexp))
+//	{
+//		return "Hospital Name cannot be consist of numbers";
+//	}
 
     // HospitalName
     if ($("#HospitalName").val().trim() == "") {
@@ -165,13 +166,13 @@ function validateHospitalForm()
 
     }
     
-    //cannot be consist of numbers
-    var regexp = /[^a-zA-Z]/g;
-	
-	if ($("#HospitalName").val().trim().match(regexp))
-	{
-		return "Hospital Name cannot be consist of numbers";
-	}
+//    //cannot be consist of numbers
+//    var regexp = /[^a-zA-Z]/g;
+//	
+//	if ($("#HospitalName").val().trim().match(regexp))
+//	{
+//		return "Hospital Name cannot be consist of numbers";
+//	}
 
     // Address
     if ($("#Address").val().trim() == "") {
@@ -211,6 +212,7 @@ function validateHospitalForm()
 
     return true;
 }
+
 //Scroll Button
 $("#buttonscroll").click(function() {
     $('html, body').animate({

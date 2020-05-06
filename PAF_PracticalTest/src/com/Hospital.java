@@ -5,7 +5,7 @@ import DbConnect.DbConnect;
 
 public class Hospital {
 	
-	
+	// Insert Hospital -------------------------------------------------------------------------------------------------------------------(Pradeep H.A.T)
 	public String insertHospital(String MOHcode,String ManagerName,String HospitalName,String Address,String TPnumber,String Location)
 	{
 		String output = "";
@@ -51,7 +51,7 @@ public class Hospital {
 		return output;
 	}
 	
-	
+	// Read Hospital -------------------------------------------------------------------------------------------------------------------(Pradeep H.A.T) 
 	public String readHospital()
 	{
 		String output = "";
@@ -121,7 +121,7 @@ public class Hospital {
 		return output;
 	}
 	
-	
+	// Update Hospital -------------------------------------------------------------------------------------------------------------------(Pradeep H.A.T)
 	public String updateHospital(String HospitalID, String MOHcode,String ManagerName,String HospitalName,String Address,String TPnumber,String Location)
 	{
 		String output = "";
@@ -168,7 +168,7 @@ public class Hospital {
 	}
 	
 	
-	
+	// Remove Hospital -------------------------------------------------------------------------------------------------------------------(Pradeep H.A.T)
 	public String deleteHospital(String HospitalID)
 	{
 		String output = "";
